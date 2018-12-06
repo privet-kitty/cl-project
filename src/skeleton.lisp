@@ -51,6 +51,7 @@
                   (uiop:subdirectories path))))))
 
 (defun make-skeleton-from-directory (directory)
+  (setf directory (first (uiop:directory* directory)))
   (flet ((relative-path (path)
            (pathname
             (subseq
